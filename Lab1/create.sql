@@ -9,51 +9,51 @@ ALTER ROLE rabhatna SET SEARCH_PATH to Lab1;
 
 CREATE TABLE Authors(
 authorID INTEGER PRIMARY KEY,
-authorName VARCHAR (30) NOT NULL,
-address VARCHAR (30) NOT NULL,
-numBooksWritten INTEGER CHECK (numBooksWritten >= 0),
-mostRecentPubDate DATE NOT NULL
+authorName VARCHAR (30),
+address VARCHAR (30),
+numBooksWritten INTEGER,
+mostRecentPubDate DATE
 );
 
 CREATE TABLE Books(
 bookID VARCHAR (6) PRIMARY KEY,
-authorID INTEGER REFERENCES Authors(authorID),
-bookName VARCHAR (30) NOT NULL,
-publisherID INTEGER REFERENCES Publishers(publisherID),
-pubDate DATE NOT NULL,
-price DECIMAL (6,2) NOT NULL,
-category CHAR (1) NOT NULL,
-lastOrderDate DATE NOT NULL,
-totalOrder INTEGER CHECK (totalOrder >= 0)
+authorID INTEGER,
+bookName VARCHAR (30),
+publisherID INTEGER,
+pubDate DATE,
+price DECIMAL (6,2),
+category CHAR (1),
+lastOrderDate DATE,
+totalOrder INTEGER
 );
 
 CREATE TABLE Publishers(
 publisherID INTEGER PRIMARY KEY,
-publisherName VARCHAR (30) NOT NULL, 
-address VARCHAR (30) NOT NULL
+publisherName VARCHAR (30), 
+address VARCHAR (30)
 );
 
 CREATE TABLE Members(
 memberID INTEGER PRIMARY KEY,
-memberName VARCHAR (30) NOT NULL, 
-joinDate DATE NOT NULL,
-renewalDate DATE NOT NULL,
-isCurrentMember BOOLEAN NOT NULL
+memberName VARCHAR (30), 
+joinDate DATE,
+renewalDate DATE,
+isCurrentMember BOOLEAN
 );
 
 CREATE TABLE Order(
-memberID INTEGER REFERENCES Members(memberID),
-bookID INTEGER REFERENCES Books(bookID),
-orderDate DATE NOT NULL,
-quantity INTEGER NOT NULL,
+memberID INTEGER,
+bookID INTEGER,
+orderDate DATE,
+quantity INTEGER,
 PRIMARY KEY (memberID, bookID, orderDate)
 );
 
 CREATE TABLE Review(
-reviewerID INTEGER REFERENCES Members(memberID),
-bookID INTEGER REFERENCES Books(bookID),
-reviewDate DATE NOT NULL,
-reviewStars INTEGER CHECK (0 <= reviewStars <= 5)
+reviewerID INTEGER,
+bookID INTEGER,
+reviewDate DATE,
+reviewStars INTEGER
 );
 
 
