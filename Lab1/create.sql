@@ -3,7 +3,6 @@
 DROP SCHEMA Lab1 CASCADE;
 CREATE SCHEMA Lab1;
 
-ALTER ROLE rabhatna SET SEARCH_PATH to Lab1;
 
 /*Defining tables for Niles Books: Authors, Books, Publishers, Memebers, Orders, and Review */
 
