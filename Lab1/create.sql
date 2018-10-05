@@ -40,17 +40,17 @@ renewalDate DATE,
 isCurrentMember BOOLEAN
 );
 
-CREATE TABLE Order(
+CREATE TABLE Orders(
 memberID INTEGER,
-bookID INTEGER,
+bookID VARCHAR (6),
 orderDate DATE,
 quantity INTEGER,
 PRIMARY KEY (memberID, bookID, orderDate)
 );
 
-CREATE TABLE Review(
+CREATE TABLE Reviews(
 reviewerID INTEGER,
-bookID INTEGER,
+bookID VARCHAR(6),
 reviewDate DATE,
 reviewStars INTEGER
 );
