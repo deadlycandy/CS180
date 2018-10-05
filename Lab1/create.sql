@@ -23,7 +23,7 @@ pubDate DATE,
 price DECIMAL (6,2),
 category CHAR (1),
 lastOrderDate DATE,
-totalOrder INTEGER
+totalOrdered INTEGER
 );
 
 CREATE TABLE Publishers(
