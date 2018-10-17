@@ -1,0 +1,5 @@
+/* 
+Output the quantity and orderDate for each order that was made by a member 
+whose isCurrentMember is
+TRUE. The second attribute in your result should appear as oDate. Duplicatesmay appear in your result. 
+*/
