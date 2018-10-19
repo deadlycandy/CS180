@@ -1,7 +1,7 @@
 -- Using lab 1 solution 
 
-DROP SCHEMA Lab2 CASCADE ;
-CREATE SCHEMA Lab2 ;
+DROP SCHEMA Lab2 CASCADE;
+CREATE SCHEMA Lab2;
 
 CREATE TABLE Authors (
   authorID          INTEGER 	NOT NULL PRIMARY KEY,
@@ -15,13 +15,14 @@ CREATE TABLE Authors (
 CREATE TABLE Books (
   bookID        CHAR(6) 	NOT NULL PRIMARY KEY,
   authorID      INTEGER 	NOT NULL,
-  bookName      VARCHAR(30) 	UNIQUE,
+  bookName      VARCHAR(30),
   publisherID   INTEGER 	NOT NULL,
   pubDate       DATE,
   price         DECIMAL(6,2),
   category      CHAR(1),
   lastOrderDate DATE,
-  totalOrdered  INTEGER
+  totalOrdered  INTEGER,
+  UNIQUE(authorID, bookName)
 ) ;
 
 
@@ -34,10 +35,11 @@ CREATE TABLE Publishers (
 
 CREATE TABLE Members (
   memberID        INTEGER 	NOT NULL PRIMARY KEY,
-  memberName      VARCHAR(30)	UNIQUE,
-  joinDate        DATE		UNIQUE,
+  memberName      VARCHAR(30),
+  joinDate        DATE,	
   renewalDate     DATE,
-  isCurrentMember BOOLEAN
+  isCurrentMember BOOLEAN,
+  UNIQUE(memberName, joinDate)
 ) ;
 
 
