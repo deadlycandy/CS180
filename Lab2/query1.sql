@@ -5,6 +5,6 @@ Your result should appear in descending order of authorName, and no duplicates s
 */
 
 SELECT DISTINCT authorID, authorName
-FROM Authors a
-WHERE a.authorName NOT LIKE "S%" OR a.authorName NOT LIKE "s%"
+FROM Authors AS a
+WHERE a.authorName NOT LIKE 'S%' OR a.authorName NOT LIKE 's%'
 ORDER BY authorName DESC;
