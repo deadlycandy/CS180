@@ -4,3 +4,8 @@ authorName and publisherName for each non-fiction book whose price is
 greater than or equal to 19.99; no duplicates should appear in your
 result.
 */
+
+
+SELECT DISTINCT category AS "Category", authorName AS "Author", publisherName AS "Publisher", price AS "Price"
+FROM Books AS b, Authors AS a, Publishers AS p
+WHERE category = 'N' and (b.authorID = a.authorID) and (b.publisherID = p.publisherID) and b.price >= 19.99;
