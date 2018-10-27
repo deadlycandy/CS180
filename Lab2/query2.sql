@@ -4,7 +4,7 @@ whose isCurrentMember is TRUE.
 The second attribute in your result should appear as oDate. Duplicates may appear in your result. 
 */
 
-SELECT isCurrentMember AS "Current Member", orderDate AS "Order Date", quantity AS "Quantity"
+SELECT quantity AS "Quanitity", orderDate AS "Order Date"
 FROM Members AS m, Orders AS o
 WHERE m.isCurrentMember and (m.memberID = o.memberID);
 

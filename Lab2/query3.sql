@@ -6,6 +6,6 @@ result.
 */
 
 
-SELECT DISTINCT category AS "Category", authorName AS "Author", publisherName AS "Publisher", price AS "Price"
+SELECT DISTINCT  authorName AS "Author", publisherName AS "Publisher"
 FROM Books AS b, Authors AS a, Publishers AS p
 WHERE category = 'N' and (b.authorID = a.authorID) and (b.publisherID = p.publisherID) and b.price >= 19.99;
