@@ -6,7 +6,7 @@ The second attribute in your result should appear as oDate. Duplicates may appea
 
 SELECT quantity AS "Quanitity", orderDate AS "Order Date"
 FROM Members AS m, Orders AS o
-WHERE m.isCurrentMember and (m.memberID = o.memberID);
+WHERE m.isCurrentMember AND (m.memberID = o.memberID);
 
 
 

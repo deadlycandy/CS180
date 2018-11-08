@@ -9,7 +9,7 @@ No duplicates should appear in your result.
 
 SELECT DISTINCT reviewerID AS "Reviewer ID", b.bookID AS "Book ID"
 FROM Reviews AS r, Books AS b
-WHERE r.reviewStars < 4 and b.bookName = 'Jane Eyre' and r.reviewerID IN 
+WHERE r.reviewStars < 4 AND b.bookName = 'Jane Eyre' AND r.reviewerID IN 
     (SELECT memberID 
      FROM Members AS m 
      WHERE m.memberName = 'John Smith');

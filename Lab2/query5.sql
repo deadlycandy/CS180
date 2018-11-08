@@ -8,7 +8,7 @@ FROM Members AS m, Reviews
 WHERE memberID IN 
     (SELECT DISTINCT reviewerID
      FROM Books AS b, Reviews AS r
-     WHERE b.pubDate > '2010-04-01' and b.bookID = r.bookID and b.authorID IN 
+     WHERE b.pubDate > '2010-04-01' AND b.bookID = r.bookID AND b.authorID IN 
         (SELECT DISTINCT authorID
          FROM Authors AS a
          WHERE a.authorName = m.memberName));

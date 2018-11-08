@@ -8,4 +8,4 @@ result.
 
 SELECT DISTINCT  authorName AS "Author", publisherName AS "Publisher"
 FROM Books AS b, Authors AS a, Publishers AS p
-WHERE category = 'N' and (b.authorID = a.authorID) and (b.publisherID = p.publisherID) and b.price >= 19.99;
+WHERE category = 'N' AND (b.authorID = a.authorID) AND (b.publisherID = p.publisherID) AND b.price >= 19.99;
