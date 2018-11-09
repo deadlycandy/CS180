@@ -1,7 +1,7 @@
 -- lab3 create.sql
 
-DROP SCHEMA Lab3 CASCADE ;
-CREATE SCHEMA Lab3 ;
+DROP SCHEMA Lab3 CASCADE;
+CREATE SCHEMA Lab3;
 
 CREATE TABLE Authors (
   authorID          INTEGER PRIMARY KEY,
@@ -9,7 +9,7 @@ CREATE TABLE Authors (
   address           VARCHAR(30),
   numBooksWritten   INTEGER,
   mostRecentPubDate DATE
-) ;
+);
 
 CREATE TABLE Books (
   bookID        CHAR(6) PRIMARY KEY,
@@ -22,13 +22,13 @@ CREATE TABLE Books (
   lastOrderDate DATE,
   totalOrdered  INTEGER,
   UNIQUE(authorID,bookName)
-) ;
+);
 
 CREATE TABLE Publishers (
   publisherID   INTEGER PRIMARY KEY,
   publisherName VARCHAR(30) UNIQUE,
   address       VARCHAR(30)
-) ;
+);
 
 CREATE TABLE Members (
   memberID        INTEGER PRIMARY KEY,
@@ -37,7 +37,7 @@ CREATE TABLE Members (
   renewalDate     DATE,
   isCurrentMember BOOLEAN,
   UNIQUE(memberName,joinDate)
-) ;
+);
 
 CREATE TABLE Orders (
   memberID  INTEGER,
@@ -45,7 +45,7 @@ CREATE TABLE Orders (
   orderDate DATE,
   quantity  INTEGER NOT NULL,
   PRIMARY KEY (memberID, bookID, orderDate)
-) ;
+);
 
 CREATE TABLE Reviews (
   reviewerID  INTEGER,
@@ -53,10 +53,10 @@ CREATE TABLE Reviews (
   reviewDate  DATE,
   reviewStars INTEGER NOT NULL,
   PRIMARY KEY (reviewerID, bookID)
-) ;
+);
 
 CREATE TABLE NewMemberships (
   memberID        INTEGER PRIMARY KEY,
   memberName      VARCHAR(30),
   renewalDate     DATE
-) ;
+);
