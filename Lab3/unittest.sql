@@ -2,17 +2,17 @@
 
 /* foreign key tests: sharks and 2020 represent incorrect values*/
 
-INSERT INTO table Books (bookID, authorID, bookName, publisherID, pubDate, price, category, lastOrderDate, totalOrdered)
+INSERT INTO Books (bookID, authorID, bookName, publisherID, pubDate, price, category, lastOrderDate, totalOrdered)
 VALUES
-    (ccfyls, 2020, 'Best book', 8080, CURRENT_DATE, 20.00, CURRENT_DATE, 2000);
+    ('sharks', 2020, 'Best book', 8080, CURRENT_DATE, 20.00, 'N', CURRENT_DATE, 2000);
 
 INSERT INTO Orders (memberID, bookID, orderDate, quantity)
 VALUES
-    (0000, sharks, CURRENT_DATE, 2000);
+    (0000, 'sharks', CURRENT_DATE, 2000);
 
 INSERT INTO Reviews (reviewerID, bookID, reviewDate, reviewStars)
 VALUES
-    (2020, ccfyls, CURRENT_DATE, 5);
+    (2020, 'ccfyls', CURRENT_DATE, 5);
 
 
 /* general contraint test */
@@ -27,11 +27,11 @@ WHERE memberID = 4444;
 
 UPDATE Books
 SET lastOrderDate = CURRENT_DATE
-WHERE bookID = ccfyls;
+WHERE bookID = 'ccfyls';
 
 UPDATE Books
-SET lastOrderDate = 2017-09-20
-WHERE bookID = paudhc;
+SET lastOrderDate = '2017-09-20'
+WHERE bookID = 'paudhc';
 
 UPDATE Members
 SET joinDate = NULL, isCurrentMember = NULL
