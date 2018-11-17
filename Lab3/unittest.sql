@@ -4,7 +4,7 @@
 
 INSERT INTO table Books (bookID, authorID, bookName, publisherID, pubDate, price, category, lastOrderDate, totalOrdered)
 VALUES
-    (sharks, 2020, 'Best book', 8080, CURRENT_DATE, 20.00, CURRENT_DATE, 2000);
+    (ccfyls, 2020, 'Best book', 8080, CURRENT_DATE, 20.00, CURRENT_DATE, 2000);
 
 INSERT INTO Orders (memberID, bookID, orderDate, quantity)
 VALUES
