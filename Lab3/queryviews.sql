@@ -26,6 +26,7 @@
 */
 
 
+
 SELECT g.publisherID, numReviewedPublished, COUNT(bad.bookID) AS numBad
 FROM GreatPublishers AS g, BadBookTotals AS bad, Books AS b
 WHERE g.publisherID = b.publisherID AND b.bookID = bad.bookID
