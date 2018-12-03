@@ -41,9 +41,8 @@ public class RunNileBooksApplication
 
             List authors = nba.getAuthorsWithManyReviewedBooks(4);
             //System.out.println(authors);
-
-
-            /*******************
+            nba.fixTotalOrdered(94519);
+            
             * Your code ends here */
 
             connection.close();

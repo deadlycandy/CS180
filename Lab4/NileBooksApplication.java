@@ -78,12 +78,26 @@ public class NileBooksApplication {
 
     public int fixTotalOrdered(int aPublisherIDtoFix)
     {
-        // your code here; return 0 appears for now to allow this skeleton to compile.
-        return 0;
+        int badBooksFixed = 0;
 
+        //Uses BadBookTotals View to update Books table
+        try{
+            PreparedStatement bbt = connection.prepareStatement(
+            "UPDATE Books b "+
+            "SET totalOrdered = badQuantitySum "+
+            "FROM BadBookTotals "+
+            "WHERE b.bookID IN ( " +
+            "SELECT bt.bookID "+
+            "FROM BadBookTotals bt, Books b "+
+            "WHERE publisherID = " + aPublisherIDtoFix + " AND bt.bookID = b.bookID)"
+            );
+            badBooksFixed = bbt.executeUpdate();
 
+        }catch(SQLException se){
+            se.printStackTrace();
+        }
+        return badBooksFixed;
 
-        // end of your code
     }
 
 
@@ -104,6 +118,8 @@ public class NileBooksApplication {
     public int increasePublishersPrices(int thePublisherID, int theCount)
     {
         // There's nothing special about the name storedFunctionResult
+        if(theCount < 1)
+        throw new java.lang.Error("theCount should be postive values")
         int storedFunctionResult = 0;
 
         // your code here
