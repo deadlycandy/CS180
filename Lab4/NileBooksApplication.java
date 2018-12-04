@@ -97,7 +97,6 @@ public class NileBooksApplication {
             se.printStackTrace();
         }
         return badBooksFixed;
-
     }
 
 
@@ -120,6 +119,7 @@ public class NileBooksApplication {
         // There's nothing special about the name storedFunctionResult
         if(theCount < 1)
         throw new java.lang.Error("theCount should be postive values")
+        
         int storedFunctionResult = 0;
 
         // your code here
