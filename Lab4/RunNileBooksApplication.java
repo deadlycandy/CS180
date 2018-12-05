@@ -32,18 +32,33 @@ public class RunNileBooksApplication
             if (connection != null)
                 System.out.println("Connected to the database!");
 
-            /* Include your code below to test the methods of the NileBooksApplication class
-             * The sample code in RunStoresApplication.java should be useful.
-             * That code tests other methods for a different database schema.
-             * Your code below: */
-
+            //Creating instance of NileBooksApplication
             NileBooksApplication nba = new NileBooksApplication(connection);
 
-            List authors = nba.getAuthorsWithManyReviewedBooks(4);
-            //System.out.println(authors);
-            nba.fixTotalOrdered(94519);
+            List output1 = nba.getAuthorsWithManyReviewedBooks(3);
+            /*Output of getAuthorsWithManyReviewedBooks
+              When the parameters numberReviewedBooks is 3
+              [111, 2192]
+             */
+
+            int output2 = nba.fixTotalOrdered(94519);
+            /* Output of fixTotalOrdered when the
+               aPublisherIDtoFix is 94519
+               9
+             */
+
+            int output3 = nba.increasePublishersPrices(98035,2);
+            System.out.println(numberUpdated);
+            /* Output of increasePublishersPrices when
+               publisherID is 98035 and theCount is 2
+               2
+            */
             
-            * Your code ends here */
+            int output4 = nba.increasePublishersPrices(98035,4);
+            /* Output of increasePublishersPrices when
+               publisherID is 98035 and theCount is 4
+               4
+            */
 
             connection.close();
 

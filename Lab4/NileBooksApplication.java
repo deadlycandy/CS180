@@ -82,6 +82,7 @@ public class NileBooksApplication {
 
         //Uses BadBookTotals View to update Books table
         try{
+            //Create SQL statement
             PreparedStatement bbt = connection.prepareStatement(
             "UPDATE Books b "+
             "SET totalOrdered = badQuantitySum "+
@@ -118,14 +119,25 @@ public class NileBooksApplication {
     {
         // There's nothing special about the name storedFunctionResult
         if(theCount < 1)
-        throw new java.lang.Error("theCount should be postive values")
-        
+        throw new java.lang.Error("theCount should be postive values");
+
         int storedFunctionResult = 0;
 
-        // your code here
+        try{
+            //Crete SQL statement
+            PreparedStatement storedFunction = connection.prepareStatement(
+                "SELECT * FROM increasePricesFunction(" + thePublisherID + "," + theCount + ")"
+            );
+
+            //Store returned result
+            ResultSet result = storedFunction.executeQuery();
+            result.next();
+            storedFunctionResult = result.getInt(1);
 
 
-        // end of your code
+        }catch(SQLException se){
+            se.printStackTrace();
+        }
         return storedFunctionResult;
 
     }
